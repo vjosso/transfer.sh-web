@@ -43,11 +43,11 @@ include "includes/head.html"
                     </div>
                     <div id="terminal" class="terminal">
                         <code class="code-wrapper"><span class="code-title"># Upload using cURL</span>
-                            $ curl --upload-file ./hello.txt https://transfer.sh/hello.txt https://transfer.sh/66nb8/hello.txt
+                            $ curl --upload-file ./hello.txt https://149.91.91.212/hello.txt https://149.91.91.212/66nb8/hello.txt
 
                             <span class="code-title"># Using the shell function</span>
                             $ transfer hello.txt
-                            ##################################################### 100.0% https://transfer.sh/eibhM/hello.txt
+                            ##################################################### 100.0% https://149.91.91.212/eibhM/hello.txt
                         </code>
                     </div>
                     <div id="web">
@@ -137,14 +137,14 @@ include "includes/head.html"
                     </div>
                     <div class="terminal">
                         <code class="code-wrapper"><span class="code-title"># Uploading is easy using curl</span>
-                            $ curl --upload-file ./hello.txt https://transfer.sh/hello.txt
+                            $ curl --upload-file ./hello.txt https://149.91.91.212/hello.txt
                             https://transfer.sh/66nb8/hello.txt
 
-                            $ curl -H "Max-Downloads: 1" -H "Max-Days: 5" --upload-file ./hello.txt https://transfer.sh/hello.txt
-                            https://transfer.sh/66nb8/hello.txt
+                            $ curl -H "Max-Downloads: 1" -H "Max-Days: 5" --upload-file ./hello.txt https://149.91.91.212/hello.txt
+                            https://149.91.91.212/66nb8/hello.txt
 
                             <span class="code-title"># Download the file</span>
-                            $ curl https://transfer.sh/66nb8/hello.txt -o hello.txt
+                            $ curl https://149.91.91.212/66nb8/hello.txt -o hello.txt
                         </code>
                     </div>
                 </div>
@@ -174,11 +174,11 @@ include "includes/head.html"
                         </div>
                         <div class="terminal">
                             <code class="code-wrapper">
-                                $ curl -i -F filedata=@/tmp/hello.txt -F filedata=@/tmp/hello2.txt https://transfer.sh/
+                                $ curl -i -F filedata=@/tmp/hello.txt -F filedata=@/tmp/hello2.txt https://149.91.91.212/
 
                                 <span class="code-title"># Combining downloads as zip or tar archive</span>
-                                $ curl https://transfer.sh/(15HKz/hello.txt,15HKz/hello.txt).tar.gz
-                                $ curl https://transfer.sh/(15HKz/hello.txt,15HKz/hello.txt).zip
+                                $ curl https://149.91.91.212/(15HKz/hello.txt,15HKz/hello.txt).tar.gz
+                                $ curl https://149.91.91.212/(15HKz/hello.txt,15HKz/hello.txt).zip
                             </code>
                         </div>
 
@@ -190,10 +190,10 @@ include "includes/head.html"
                         </div>
                         <div class="terminal">
                             <code class="code-wrapper"><span class="code-title"># Encrypt files with password using gpg</span>
-                                $ cat /tmp/hello.txt|gpg -ac -o-|curl -X PUT --upload-file "-" https://transfer.sh/test.txt
+                                $ cat /tmp/hello.txt|gpg -ac -o-|curl -X PUT --upload-file "-" https://149.91.91.212/test.txt
 
                                 <span class="code-title"># Download and decrypt</span>
-                                $ curl https://transfer.sh/1lDau/test.txt|gpg -o- > /tmp/hello.txt
+                                $ curl https://149.91.91.212/1lDau/test.txt|gpg -o- > /tmp/hello.txt
                             </code>
                         </div>
                     </div>
@@ -207,10 +207,10 @@ include "includes/head.html"
                         <div class="terminal">
                             <code class="code-wrapper"><span class="code-title"># Scan for malware or viruses using Clamav</span>
                                 $ wget http://www.eicar.org/download/eicar.com
-                                $ curl -X PUT --upload-file ./eicar.com https://transfer.sh/eicar.com/scan
+                                $ curl -X PUT --upload-file ./eicar.com https://149.91.91.212/eicar.com/scan
 
                                 <span class="code-title"># Upload malware to VirusTotal, get a permalink in return</span>
-                                $ curl -X PUT --upload-file nhgbhhj https://transfer.sh/test.txt/virustotal
+                                $ curl -X PUT --upload-file nhgbhhj https://149.91.91.212/test.txt/virustotal
                             </code>
                         </div>
                     </div>
@@ -220,7 +220,7 @@ include "includes/head.html"
                         </div>
                         <div class="terminal">
                             <code class="code-wrapper"><span class="code-title"># Backup, encrypt and transfer</span>
-                                $ mysqldump --all-databases|gzip|gpg -ac -o-|curl -X PUT --upload-file "-" https://transfer.sh/test.txt</code>
+                                $ mysqldump --all-databases|gzip|gpg -ac -o-|curl -X PUT --upload-file "-" https://149.91.91.212/test.txt</code>
                         </div>
                     </div>
                 </div>
@@ -243,9 +243,9 @@ include "includes/head.html"
                             <code class="code-wrapper"><span class="code-title"># Import keys from keybase</span>
                                 $ keybase track [them]
                                 <span class="code-title"># Encrypt for recipient(s)</span>
-                                $ cat somebackupfile.tar.gz | keybase encrypt [them] | curl --upload-file '-' https://transfer.sh/test.txt
+                                $ cat somebackupfile.tar.gz | keybase encrypt [them] | curl --upload-file '-' https://149.91.91.212/test.txt
                                 <span class="code-title"># Decrypt</span>
-                                $ curl https://transfer.sh/sqUFi/test.md |keybase decrypt
+                                $ curl https://149.91.91.212/sqUFi/test.md |keybase decrypt
                             </code>
                         </div>
                     </div>
@@ -257,7 +257,7 @@ include "includes/head.html"
                         </div>
                         <div class="terminal">
                             <code class="code-wrapper"><span class="code-title"># wget</span>
-                                $ wget --method PUT --body-file=/tmp/file.tar https://transfer.sh/file.tar -O - -nv
+                                $ wget --method PUT --body-file=/tmp/file.tar https://149.91.91.212/file.tar -O - -nv
                             </code>
                         </div>
                     </div>
@@ -267,7 +267,7 @@ include "includes/head.html"
                         </div>
                         <div class="terminal">
                             <code class="code-wrapper"><span class="code-title"># grep syslog for pound and transfer</span>
-                                $ cat /var/log/syslog|grep pound|curl --upload-file - https://transfer.sh/pound.log
+                                $ cat /var/log/syslog|grep pound|curl --upload-file - https://149.91.91.212/pound.log
                             </code>
                         </div>
                     </div>
@@ -280,7 +280,7 @@ include "includes/head.html"
                         </div>
                         <div class="terminal">
                             <code class="code-wrapper"><span class="code-title"># Upload using Powershell</span>
-                                PS H:\&gt; invoke-webrequest -method put -infile .\file.txt https://transfer.sh/file.txt
+                                PS H:\&gt; invoke-webrequest -method put -infile .\file.txt https://149.91.91.212/file.txt
                             </code>
                         </div>
                     </div>
@@ -290,7 +290,7 @@ include "includes/head.html"
                         </div>
                         <div class="terminal">
                             <code class="code-wrapper"><span class="code-title"># HTTPie</span>
-                                $ http https://transfer.sh/ -vv &lt; /tmp/test.log
+                                $ http https://149.91.91.212/ -vv &lt; /tmp/test.log
                             </code>
                         </div>
                     </div>
@@ -305,7 +305,7 @@ include "includes/head.html"
                                 <span class="code-title"># transfersh-cli (https://github.com/tanrax/transfersh-cli)</span>
                                 $ trasnfersh photos.zip
                                 <span class="code-title"># Uploading file</span>
-                                <span class="code-title"># Download from here: https://transfer.sh/xxxxxx/photos.zip</span>
+                                <span class="code-title"># Download from here: https://149.91.91.212/xxxxxx/photos.zip</span>
                                 <span class="code-title"># It has also been copied to the clipboard!</span>
                             </code>
                         </div>
